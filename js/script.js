@@ -4,7 +4,7 @@ function viewModel() {
   var markers = []; 
   var myLocation = {}; 
 
-  // center map:  City Neighborhood in Maryland
+  // center map: Gaithersburg City Neighborhood in maryland
   var maryland = new google.maps.LatLng(39.136385, -77.216324);  
 
   // holds places array, infowindow, markers, and all other info
@@ -119,9 +119,7 @@ function viewModel() {
   this.getFoursquareInfo = function(point) {
     // foursquare api url
     var foursquare = 'https://api.foursquare.com/v2/venues/search?oauth_token=COVMN3WLIESURUQOG3055SSHDF1X1MNENCNH3IFW5DJA4NBS&v=20170420&ll=39.136385,-77.216324&query=\'' + point['name'] + '\'&limit=10';
-
-    https://api.foursquare.com/v2/venues/search?ll=39.136385, -77.216324 &query=park&oauth_token=COVMN3WLIESURUQOG3055SSHDF1X1MNENCNH3IFW5DJA4NBS&v=20170420
-
+    
     // start ajax and grab: venue name, phone number and twitter handle
     $.getJSON(foursquare).done(function(response) {
         self.fourSquareAPI = '<br>' + 'Foursquare Information::' + '<br>';
