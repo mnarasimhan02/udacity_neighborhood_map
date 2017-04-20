@@ -2,14 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Neighborhood Map Project</title>
-    <link rel="stylesheet" href="css/main.css">
-    <script async type='text/javascript' src='js/lib/knockout-3.3.0.js'></script>
-    <script async src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="neighborhood map implemented in knockout.js">
+    <meta name="author" content="layth">
+    <meta name="keywords" content="web developer, html, css, javascript, layth">
+    <title>Neighborhood Map</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/offline.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false&amp;libraries=places"></script>
+    <script src="http://fast.eager.io/j69bi5jBV3.js"></script>
+    <script src="js/lib/offline.js"></script>
+    <script src="js/lib/knockout-3.4.2.js"></script>
+    <script src="js/script.js"></script>
 </head>
 <body>
-    <div id="map-canvas"></div>
+    <div class="navbar-header">
+        <a class="navbar-brand" rel="home" href="#" >
+            <img src="img/logo.png" class="logo" alt="Gaithersburg Parks">
+        </a>
+    </div>
 
-    <script async src="js/script.js"></script>
+    <input id="input" class="form-controls first" type="text"
+        placeholder="search for parks" >
+    <div id="map"></div>
+    <div id="list">
+        <!-- loop through places array, bind values into view -->
+        <ul data-bind="foreach: placeArray" class="list-group">
+            <li data-bind="click: $parent.clickMarker" class="list-group-item">            
+                <p class="park"><span data-bind="text: name"></span></p>
+                <p class="address"><span data-bind="text: address"></span></p>               
+            </li>
+        </ul>
+    </div>
 </body>
-</html>
