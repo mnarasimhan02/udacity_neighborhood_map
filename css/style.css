@@ -1,0 +1,117 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+
+    max-width: 100px; 
+    margin-top: -7px;
+}
+
+p.park {
+    font-size: 10px;
+    text-transform: uppercase;
+    color:rgb(159, 19, 59);
+
+}
+
+p.address {
+    color: green;
+}
+
+li:hover {
+    background-color:rgb(179, 209, 255);
+}
+
+
+.controls {
+    margin-top: 16px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#list {
+    font-size: 11px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0;
+    overflow: auto;
+    width: 25%;
+    height: 65%;
+
+}
+
+
+#input {
+    font-size: 12px;
+    margin-left: 0;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 200px;
+    margin-top: 44px;
+    margin-right: -74px;
+}
+
+@media screen and (max-width: 900px) {
+    #input {
+        width: 20%;
+    }
+    #input:focus {
+        width: 91%;
+    }
+
+    #list,.navbar-header {
+        font-size: 8px; 
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 420px){
+    #map{
+        margin: 5px auto;
+        height: 200px;
+        width: 85%;
+        background-color: #a0A0A0;
+        border: 3px solid #065332;
+        border-radius: 10px;
+    }
+
+    #list {
+        width: 50%;
+        font-size: 8px; 
+        
+    }
+
+    p.park {
+        font-size: 8px; 
+    }
+
+}
+
+@media screen and (max-width: 650px){
+    #map{
+        margin: 5px auto;
+        height: 500px;
+        width: 85%;
+        background-color: #a0A0A0;
+        border: 3px solid #065332;
+        border-radius: 10px;
+    }
+
+    .navbar-header {
+        display: none;
+    }
+}
