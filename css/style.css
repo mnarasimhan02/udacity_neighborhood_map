@@ -51,18 +51,24 @@ li:hover {
     overflow: auto;
     width: 25%;
     height: 65%;
+    z-index: 2; position: absolute; left: 8px; top: 90px; right: 0px;
 
 }
 
-
 #input {
-    font-size: 12px;
-    margin-left: 0;
-    padding: 0 11px 0 13px;
-    text-overflow: ellipsis;
-    width: 200px;
-    margin-top: 44px;
-    margin-right: -74px;
+    margin: 15px 0 5px 20px;
+    width: 25%;
+    height: 35px;
+    left: 0px;
+    top: 30px !important;
+    font-size: 17px;
+    font-family: helvetica, sans-serif;
+    color: #9D9D9D;
+    border: none;
+    -webkit-box-shadow: 2px 2px 5px #9D9D9D;
+    outline: none;
+    position: absolute;
+    z-index: 3; 
 }
 
 @media screen and (max-width: 900px) {

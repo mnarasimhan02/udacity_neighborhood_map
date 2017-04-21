@@ -14,7 +14,7 @@ function viewModel() {
   self.fourSquareAPI = '';
   
   // load the map
-  function init() {
+  function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
     center: maryland,
     zoom: 16,
@@ -23,7 +23,7 @@ function viewModel() {
     // search for parks within radius 
     var request = {
       location: maryland,
-      radius: 900,
+      radius: 700,
       types: ['park']
     };
 
@@ -204,7 +204,7 @@ function viewModel() {
   }); 
 
   // load the map in the window
-  google.maps.event.addDomListener(window, 'load', init);
+  google.maps.event.addDomListener(window, 'load', initMap);
 
 
 }
