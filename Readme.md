@@ -11,7 +11,8 @@ Upon page load parks in the Gaithersburg City area are plotted on the map. A lis
 
 ######What is happening? When an item from the list is clicked, google maps place name and fourSquare venues endpoint is populated in the infowindow, namely, address, name, phone and twitter handle
 
-
+Below is the screenshot of the app.
+![1](/screenshots/screen1.png?raw=true)
 
 Sources:
 http://knockoutjs.com/documentation/introduction.html
