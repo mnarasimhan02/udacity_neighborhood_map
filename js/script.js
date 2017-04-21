@@ -36,7 +36,6 @@ function viewModel() {
     // will show a list of all the markers
     var list = (document.getElementById('list'));
 
-
     map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(list);
     
     var input = (document.getElementById('input'));
@@ -99,7 +98,6 @@ function viewModel() {
     markers.push(marker);
     return marker;
   }
-
 
   // callback function to handle results object and PlacesServiceStatus response
   function callback(results, status){
