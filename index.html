@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -7,21 +8,41 @@
     <meta name="author" content="Mahesh N">
     <meta name="keywords" content="web developer, html, css, javascript, layth">
     <title>Neighborhood Map</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/offline.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?AIzaSyBZMC4WVzQMImv_a7tAmiC8IvCpS_pZGYw&libraries=places"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?AIzaSyBZMC4WVzQMImv_a7tAmiC8IvCpS_pZGYw&libraries=places"></script>
+    <script src="http://fast.eager.io/j69bi5jBV3.js"></script>
+    <script src="js/lib/offline.js"></script>
     <script src="js/lib/knockout-3.4.2.js"></script>
     <script src="js/script.js"></script>
 </head>
+
 <body>
-    <div class="navbar-header">
-        <a class="navbar-brand" rel="home" href="#" >
-            <img src="img/logo.png" class="logo" alt="Gaithersburg City Parks Logo">
-        </a>
-    </div>
-    <input id="input" class="form-controls first" type="text"
-        placeholder="search" >
-    <div id="map"></div>
-    <div id="list">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3">
+                <p>
+                    <a rel="home" href="#"><img src="img/logo.png" class="logo" alt="Gaithersburg City Parks Logo" width="100"></a>
+                </p>
+                <div class="form-group">
+                    <input id="input" class="form-control first" type="text" placeholder="Search For Restaurants">
+                </div>
+                <div id="list">
+                    <!-- loop through places array, bind values into view -->
+                    <ul data-bind="foreach: placeArray" class="list-group">
+                        <li data-bind="click: $parent.clickMarker" class="list-group-item">
+                            <p class="park"><span data-bind="text: name"></span></p>
+                            <p class="address"><span data-bind="text: address"></span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <div id="map"></div>
+            </div>
+        </div>
     </div>
 </body>
