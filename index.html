@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="neighborhood map implemented in knockout.js">
+    <meta name="keywords" content="web developer, html, css, javascript, layth">
+    <title>Neighborhood Map</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZMC4WVzQMImv_a7tAmiC8IvCpS_pZGYw&libraries=places"></script>
+    <script src="js/lib/knockout-3.4.2.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+<div class="search-box">    
+    <input id="input" class="form-controls first" type="text" placeholder="Search for Resturants" >
+    <div id="list" class="search-res-list">
+        <!-- loop through places array, bind values into view -->
+        <ul data-bind="foreach: placeArray" class="list-group">
+            <li data-bind="click: $parent.clickMarker" class="list-group-item">            
+                <p class="resturant"><span data-bind="text: name"></span><span class="thumbnail-container">
+                <img width="80px" height="60px" data-bind="attr:{src: thumbUrl}" /></span></p>
+                <p class="address"><span data-bind="text: address"></span></p>               
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="map-canvas" class="map_canvas"></div>
+</body>
