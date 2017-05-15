@@ -4,7 +4,7 @@ Follow the link to open the project: https://github.com/mnarasimhan02/udacity_ne
 
 A single-page application featuring a map of the Gaithersburg City restaurants. Built with the following Libraries: Knockoutjs => google maps + fourSquare api
 
-Google near by search is sued to get near by restaurants and details about restaurants including name , rating and reviews
+Google near by search is used to get near by restaurants and details about restaurants including name , rating and reviews
 
 Four square venue search api is used to add category of restaurant, current number of users and checkin at the restaurant details
 
@@ -14,12 +14,8 @@ Upon page load restaurants in the Gaithersburg  area are plotted on the map. A l
 
 How To Use
 
-Open index.html in any browser or Click here to try it out: ➡ http://mnarasimhan02.github.io/udacity_neighborhood_map.git/
+Open index.html in any browser
 Click on any of the places on the map / sidebar for more information
 
 Below is the screenshot of the app.
 ![1](/screenshot/screen1.png?raw=true)
-
-
-References:
-
