@@ -9,14 +9,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZMC4WVzQMImv_a7tAmiC8IvCpS_pZGYw&libraries=places"></script>
-    <script src="js/lib/knockout-3.4.2.js"></script>
-    <script src="js/script.js"></script>
 </head>
-<body>
-<div class="search-box">    
-    <input id="input" class="form-controls first" type="text" placeholder="Search for Resturants" >
+<body>  
+<div class="search-box">
+    <input id="input" placeholder="Filter..." class="form-controls first" type="search" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off">
+            <!-- loop through places array, bind values into view -->
+    <!-- <input id="input" class="form-controls first" type="hidden" placeholder="Search for Resturants" > -->
     <div id="list" class="search-res-list">
         <!-- loop through places array, bind values into view -->
         <ul data-bind="foreach: placeArray" class="list-group">
@@ -29,4 +27,8 @@
     </div>
 </div>
 <div id="map-canvas" class="map_canvas"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/lib/knockout-3.4.2.js"></script>
+    <script src="js/script.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZMC4WVzQMImv_a7tAmiC8IvCpS_pZGYw&libraries=places&callback=initMap" async defer></script>
 </body>
