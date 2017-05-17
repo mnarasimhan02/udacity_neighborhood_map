@@ -17,7 +17,7 @@ function viewModel() {
         for (var x in searchLocations) {
             if (searchLocations[x].name.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
                 self.placeArray.push(searchLocations[x]);
-                setMarker(placesObjects[x]);
+                markers[x].setVisible(true);
             }
         }
     }
@@ -214,11 +214,9 @@ function viewModel() {
     function clearMarkers() {
         for (var i = 0; i < markers.length; i++) {
             if (markers[i]) {
-                markers[i].setMap(null);
+                markers[i].setVisible(false);
             }
         }
-        // reset markers
-        markers = [];
     }
 
     // map bounds get updated as page is resized
@@ -237,6 +235,14 @@ function initMap(err) {
     }
     $(function() {
         ko.applyBindings(new viewModel());
+    });
+    $('#hide').click(function(){
+      if($('#list').is(':visible')){
+          $('#list').hide();
+      } else{
+          $('#list').show();
+      }
+      
     });
 }
 /**
