@@ -236,13 +236,13 @@ function initMap(err) {
     $(function() {
         ko.applyBindings(new viewModel());
     });
-    $('#hide').click(function(){
-      if($('#list').is(':visible')){
-          $('#list').hide();
-      } else{
-          $('#list').show();
-      }
-      
+    $('#hide').click(function() {
+        if ($('#list').is(':visible')) {
+            $('#list').hide();
+        } else {
+            $('#list').show();
+        }
+
     });
 }
 /**
